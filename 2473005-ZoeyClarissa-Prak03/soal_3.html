@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Tambah Data User</title>
+    </head>
+
+    <body>
+    <table border="1" width="330px" align="center">
+        <tr>
+            <td>
+                <h2>Form Tambah Data User</h2>
+                <form>
+                <table>
+                    <tr>
+                        <td width="120">Name</td>
+                        <td>:</td>
+                        <td>
+                            <input type="text" required
+                            oninvalid="this.setCustomValidity('Name is required!!!')"
+                            oninput="this.setCustomValidity('')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="120">Address</td>
+                        <td>:</td>
+                        <td>
+                            <input type="text" required
+                            oninvalid="this.setCustomValidity('Address is required!!!')"
+                            oninput="this.setCustomValidity('')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td>
+                            <input type="email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Home Page</td>
+                        <td>:</td>
+                        <td>
+                            <input type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Birth Date</td>
+                        <td>:</td>
+                        <td>
+                            <input type="date">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Favorit Color</td>
+                        <td>:</td>
+                        <td>
+                            <input type="color">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IPK</td>
+                        <td>:</td>
+                        <td>
+                            <input type="number" min="0" max="4" step="0.1" value="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number</td>
+                        <td>:</td>
+                        <td>
+                            <input type="text" pattern="[0-9]{3}-[0-9]{7,10}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Add">
+                        </td>
+                    </tr>
+            </td>
+        </tr>
+    </table>
+    </body>
+</html>
