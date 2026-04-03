@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>nav</title>
+        <style>
+            ul{
+                list-style: none;
+            }
+            li{
+                float: left;
+                border-style: dotted;
+                border-width: 2px;
+                margin: 3px;
+                padding: 2px 30px 2px 30px;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+            li:hover {
+                background-color: black;
+            }
+            li:hover a{
+                color: white;
+            }
+            .n1{
+                display: none;
+            }
+            li:hover .n1{
+                display: block;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="" class="n">News</a>
+            <ul class="n1">
+                <li><a href="">Sports</a></li>
+                <li><a href="">Music</a></li>
+                <li><a href="">Movie</a></li>
+            </ul>
+            
+            </li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">About</a></li>
+        </ul>
+    </body>
+</html>
