@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>piramida</title>
+        <script type="text/javascript">
+            function piramida() {
+                var tinggi = document.getElementById("tinggi").value;
+                var hasil = "";
+
+                for (var i = 1; i <= tinggi; i++) {
+                    hasil += "<tr>";
+                    for (var k = 1; k <= (tinggi - i); k++) {
+                        hasil += "<td></td>";
+                    }
+
+                    for (var j = 1; j <= (2 * i - 1); j++) {
+                        hasil += "<td style='background-color: orange'></td>";
+                    }
+                    hasil += "</tr>";
+                }
+                document.getElementById("tabel").innerHTML = hasil;
+            }
+            
+
+        </script>
+    </head>
+    <body>
+        <p>Tinggi Piramida: <input type="text" id="tinggi"></p>
+        <button onclick="piramida()">proses</button>
+        <table  width="800" height="600" id="tabel"></table>
+    </body>
+</html>

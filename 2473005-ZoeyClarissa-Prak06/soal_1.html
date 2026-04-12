@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>si</title>
+        <script type="text/javascript">
+            function plusminus() {
+                var a = document.getElementById("satu").value;
+                var b = document.getElementById("dua").value;
+
+                if (isNaN(a) && isNaN(b)) {
+                    alert("angka pertama dan kedua harus angka.");
+                    return;
+                }
+                else if (isNaN(a)) {
+                    alert("Angka pertama harus berupa angka.");
+                    return;
+                }
+                else if (isNaN(b)) {
+                    alert("Angka kedua harus berupa angka.");
+                    return;
+                }
+
+                
+
+                var plus = parseInt(a) + parseInt(b);
+                var minus = parseInt(a) - parseInt(b);
+
+                document.getElementById("a1").innerHTML = a;
+                document.getElementById("a2").innerHTML = b;
+                document.getElementById("b1").innerHTML = a;
+                document.getElementById("b2").innerHTML = b;
+                document.getElementById("tambah").innerHTML = plus;
+                document.getElementById("kurang").innerHTML = minus;
+
+
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <p>Angka Pertama :  <input type="text" id="satu"></p> 
+        <p>Angka Kedua : <input type="text" id="dua"></p>
+        <button onclick="plusminus()">Count</button>
+        <table border="1" cellpadding="20>">
+            <tr>
+                <td id="a1"></td>
+                <td>+</td>
+                <td id="a2"></td>
+                <td>=</td>
+                <td id="tambah"></td>
+            </tr>
+            <tr>
+                <td id="b1"></td>
+                <td>-</td>
+                <td id="b2"></td>
+                <td>=</td>
+                <td id="kurang"></td>
+            </tr>
+        </table>
+
+    </body>
+</html>

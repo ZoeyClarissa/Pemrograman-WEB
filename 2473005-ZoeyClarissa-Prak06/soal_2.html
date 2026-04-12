@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>perkalian</title>
+        <script type="text/javascript">
+            function perkalian() {
+                var a = prompt("A number?");
+
+                while (isNaN(a) || a == "") {
+                    a = prompt("A number?");
+                }
+
+                a = parseInt(a);
+
+                for (var i = 1; i <= a; i++) {
+                    document.write(a + " x " + i + " = " + (a * i) + "<br>");
+                }
+            }
+
+        </script>
+    </head>
+    <body onload="perkalian()">
+        
+    </body>
+</html>
