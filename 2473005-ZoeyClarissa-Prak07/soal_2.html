@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.biru { background-color: lightblue; }
+.oranye { background-color: lightsalmon; }
+.hijau { background-color: lightgreen; }
+</style>
+
+<script>
+function masuk(id){
+    document.getElementById(id).className = "hijau";
+}
+
+function keluar(id, warna){
+    document.getElementById(id).className = warna;
+}
+</script>
+</head>
+
+<body>
+
+<table border="1" cellpadding="8">
+
+<tr style="background-color:#A9C4A4;">
+    <th>Position</th>
+    <th>Programming Language</th>
+    <th>Ratings</th>
+</tr>
+
+<tr id="r1" class="biru"
+    onmouseover="masuk('r1')"
+    onmouseout="keluar('r1','biru')">
+    <td>1</td><td>C</td><td>18.058%</td>
+</tr>
+
+<tr id="r2" class="oranye"
+    onmouseover="masuk('r2')"
+    onmouseout="keluar('r2','oranye')">
+    <td>2</td><td>Java</td><td>18.051%</td>
+</tr>
+
+<tr id="r3" class="biru"
+    onmouseover="masuk('r3')"
+    onmouseout="keluar('r3','biru')">
+    <td>3</td><td>C++</td><td>9.707%</td>
+</tr>
+
+<tr id="r4" class="oranye"
+    onmouseover="masuk('r4')"
+    onmouseout="keluar('r4','oranye')">
+    <td>4</td><td>PHP</td><td>9.662%</td>
+</tr>
+
+<tr id="r5" class="biru"
+    onmouseover="masuk('r5')"
+    onmouseout="keluar('r5','biru')">
+    <td>5</td><td>(Visual) Basic</td><td>6.392%</td>
+</tr>
+
+</table>
+
+</body>
+</html>

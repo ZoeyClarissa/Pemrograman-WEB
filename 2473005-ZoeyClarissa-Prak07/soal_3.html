@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    let data = [];
+    function tambah(){
+        let input = document.getElementById("txt").value;
+
+        if(input !== ""){
+            data.push(parseInt(input));
+            document.getElementById("txt").value = "";
+        }
+    }
+    function proses(){
+        let pilih = document.getElementById("opsi").value;
+        let hasil = document.getElementById("hasil");
+
+        if(pilih == "display"){
+            hasil.value = data.join(", ");
+        }
+        else if(pilih == "count"){
+            hasil.value = data.length;
+        }
+        else if(pilih == "sum"){
+            let total = 0;
+            for(let i=0;i<data.length;i++){
+                total += data[i];
+            }
+            hasil.value = total;
+        }
+        else if(pilih == "average"){
+            let total = 0;
+            for(let i=0;i<data.length;i++){
+                total += data[i];
+            }
+            hasil.value = data.length ? total/data.length : 0;
+        }
+        else if(pilih == "max"){
+            hasil.value = Math.max(...data);
+        }
+        else if(pilih == "min"){
+            hasil.value = Math.min(...data);
+        }
+        else if(pilih == "ganjil"){
+            hasil.value = data.filter(x => x % 2 != 0).join(", ");
+        }
+        else if(pilih == "genap"){
+            hasil.value = data.filter(x => x % 2 == 0).join(", ");
+        }
+        else if(pilih == "hapus"){
+            data = [];
+            hasil.value = "";
+        }
+    }
+</script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Data</td>
+            <td><input type="text" id="txt"></td>
+        </tr>
+        <tr>
+            <td><button onclick="tambah()">Add</button></td>
+            <td>
+                <select id="opsi" onchange="proses()">
+                    <option value="">Pilih Operasi</option>
+                    <option value="display">Display</option>
+                    <option value="count">Count</option>
+                    <option value="sum">Sum</option>
+                    <option value="average">Average</option>
+                    <option value="max">Max</option>
+                    <option value="min">Min</option>
+                    <option value="ganjil">Ganjil</option>
+                    <option value="genap">Genap</option>
+                    <option value="hapus">Hapus</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Hasil</td>
+            <td><input type="text" id="hasil" readonly></td>
+        </tr>
+    </table>
+</body>
+</html>

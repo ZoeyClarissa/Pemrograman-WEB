@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function hitung(teks){
+    let isi = teks.value;
+
+    if (isi.length > 256){
+        teks.value = isi.substring(0,256);
+    }
+
+    document.getElementById("count").innerHTML = isi.length + "/256";
+}
+</script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><p>Judul :</p></td>
+            <td><input type="text" style="width:300px;"></td>
+        </tr>
+        <tr>
+            <td><p>Deskripsi :</p></td>
+            <td><textarea
+                rows="5" 
+                cols="40"
+                onkeyup="hitung(this)" >
+            </textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align:right;">
+                <p id="count">0/256</p>
+            </td>
+        </tr>
+    </table>
+    
+    
+
+</body>
+</html>
