@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Find Company</title>
+
+    <script type="text/javascript" src="jquery-4.0.0.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      .box {
+        width: 500px;
+        margin: 50px auto;
+      }
+
+      input {
+        width: 300px;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+
+      .company {
+        font-size: 20px;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <input type="text" id="txtSearch" />
+
+      <div class="company">Sun Microsystem</div>
+      <div class="company">Apache Software Foundation</div>
+      <div class="company">Oracle Coorporation</div>
+      <div class="company">International Bussiness Machines</div>
+      <div class="company">Microsoft Coorporation</div>
+      <div class="company">Apple Inc</div>
+      <div class="company">Sap Ag</div>
+      <div class="company">Accenture</div>
+      <div class="company">Computer Sciences Coorporation</div>
+      <div class="company">Google</div>
+      <div class="company">Softbank</div>
+      <div class="company">Yahoo</div>
+    </div>
+
+    <script>
+      $("#txtSearch").keyup(function () {
+        let cari = $(this).val().toLowerCase();
+
+        $(".company").css("color", "black");
+
+        $(".company").each(function () {
+          let text = $(this).text().toLowerCase();
+
+          if (text.includes(cari)) {
+            $(this).css("color", "red");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

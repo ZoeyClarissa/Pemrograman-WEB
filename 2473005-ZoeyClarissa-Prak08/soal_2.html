@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Search</title>
+    <script type="text/javascript" src="jquery-4.0.0.min.js"></script>
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      .box {
+        width: 400px;
+        margin: 50px auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px #ccc;
+      }
+
+      input {
+        width: 220px;
+        padding: 5px;
+      }
+
+      button {
+        padding: 5px 10px;
+      }
+
+      .nama {
+        margin-top: 5px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <input type="text" id="txtNama" />
+      <button id="btnAdd">Add</button>
+      <button id="btnSearch">Search</button>
+
+      <div class="nama">John Resig</div>
+      <div class="nama">George Martin</div>
+      <div class="nama">Malcom John Sinclair</div>
+      <div class="nama">J. Ohn</div>
+    </div>
+
+    <script>
+      $("#btnAdd").click(function () {
+        let nama = $("#txtNama").val();
+
+        if (nama != "") {
+          $("<div class='nama'>" + nama + "</div>").appendTo(".box");
+          $("#txtNama").val("");
+        }
+      });
+
+      $("#btnSearch").click(function () {
+        let cari = $("#txtNama").val();
+
+        $(".nama").css("text-decoration", "none");
+
+        $(".nama:contains('" + cari + "')").css("text-decoration", "underline");
+      });
+    </script>
+  </body>
+</html>

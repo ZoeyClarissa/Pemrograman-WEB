@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Check</title>
+
+    <script type="text/javascript" src="jquery-4.0.0.min.js"></script>
+    <style>
+      table {
+        margin: 50px auto;
+      }
+
+      td {
+        width: 80px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      hr {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table border="1" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>
+          <input class="header" type="checkbox" />
+          <hr />
+          <input class="body" type="checkbox" /><br /><br />
+          <input class="body" type="checkbox" /><br /><br />
+          <input class="body" type="checkbox" /><br /><br />
+          <input class="body" type="checkbox" /><br /><br />
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      $(".header").click(function () {
+        var flag = $(this).prop("checked");
+
+        if (flag) {
+          $(".body").prop("checked", true);
+        } else {
+          $(".body").prop("checked", false);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hover</title>
+
+    <script type="text/javascript" src="jquery-4.0.0.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".submenu").hide();
+
+        $(".item").hover(
+          function () {
+            $(".submenu").hide();
+            $(this).children(".submenu").show();
+          },
+
+          function () {
+            $(this).children(".submenu").hide();
+          },
+        );
+      });
+    </script>
+
+    <style>
+      .menu li {
+        list-style: none;
+      }
+
+      .item {
+        float: left;
+        width: 180px;
+        margin-right: 10px;
+        background: deeppink;
+        color: white;
+        padding-left: 5px;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .submenu {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        width: 180px;
+        padding-left: 5px;
+        background: white;
+        border: 2px solid deeppink;
+      }
+
+      .submenu li {
+        color: black;
+      }
+
+      .clear {
+        clear: both;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ol class="menu">
+      <li class="item">
+        jQuery
+
+        <ol class="submenu">
+          <li>Download</li>
+          <li>Documentation</li>
+          <li>Blog</li>
+        </ol>
+      </li>
+
+      <li class="item">
+        Community
+
+        <ol class="submenu">
+          <li>Mailing List</li>
+          <li>Tutorials</li>
+          <li>Demos</li>
+          <li>Plugins</li>
+        </ol>
+      </li>
+
+      <li class="item">
+        Development
+
+        <ol class="submenu">
+          <li>Source Code</li>
+          <li>Bug Tracking</li>
+          <li>Recent Changes</li>
+        </ol>
+      </li>
+
+      <div class="clear"></div>
+    </ol>
+  </body>
+</html>

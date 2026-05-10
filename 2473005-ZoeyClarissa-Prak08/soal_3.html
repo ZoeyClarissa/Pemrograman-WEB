@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <title>warna</title>
+
+    <script type="text/javascript" src="jquery-4.0.0.min.js"></script>
+    <style>
+      .kotak {
+        width: 50px;
+        height: 50px;
+        border: 3px blue solid;
+        margin: 5px;
+        float: left;
+      }
+
+      .container {
+        width: 600px;
+        margin: auto;
+      }
+
+      button {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <button id="btnChange">Change colors</button>
+
+      <br/>
+
+      <div class="kotak"></div>
+      <div class="kotak"></div>
+      <div class="kotak"></div>
+      <div class="kotak"></div>
+      <div class="kotak"></div>
+      <div class="kotak"></div>
+      <div class="kotak"></div>
+      <div class="kotak"></div>
+    </div>
+
+    <script>
+      $(".kotak").click(function () {
+        $(".kotak").removeAttr("id");
+        $(".kotak").css("background", "white");
+
+        $(this).css("background", "red");
+        $(this).attr("id", "merah");
+      });
+
+      $("#btnChange").click(function () {
+        $(".kotak").each(function () {
+          if ($(this).attr("id") == "merah") {
+            return false;
+          }
+
+          $(this).css("background", "yellow");
+        });
+      });
+    </script>
+  </body>
+</html>
