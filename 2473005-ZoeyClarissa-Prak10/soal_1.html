@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Daftar Nilai Mahasiswa</title>
+    <script type="text/javascript" src="jquery-4.0.0.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      .box {
+        width: 650px;
+        padding: 15px;
+      }
+
+      .pilihan {
+        width: 350px;
+        border: 1px solid black;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th {
+        background: black;
+        color: white;
+        padding: 8px;
+      }
+
+      td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+
+      tbody tr:nth-child(odd) {
+        background: #ccffaa;
+      }
+
+      tbody tr:nth-child(even) {
+        background: #ffffcc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h2>
+        Selamat! Berikut adalah Daftar Mahasiswa yang mendapat Nilai A
+        Pemrograman Web SI Tahun Ajaran 2023/2024
+      </h2>
+
+      <div class="pilihan">
+        <input type="radio" name="kelas" value="nilai" checked /> All
+        <br />
+
+        <input type="radio" name="kelas" value="nilaiA" /> Kelas A
+        <br />
+
+        <input type="radio" name="kelas" value="nilaiB" /> Kelas B <br /><br />
+
+        <button id="search">Search</button>
+      </div>
+
+      <table id="hasil">
+        <thead>
+          <tr>
+            <th>NRP</th>
+            <th>NAMA</th>
+            <th>KELAS</th>
+            <th>NILAI AKHIR</th>
+          </tr>
+        </thead>
+
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#search").click(function () {
+          let file = $(":radio[name='kelas']:checked").val();
+
+          $.getJSON(file + ".js", function (data) {
+            let isi = "";
+
+            $.each(data.nilai, function (i, item) {
+              isi += `
+            <tr>
+              <td>${item.nrp}</td>
+              <td>${item.nama}</td>
+              <td>${item.kelas}</td>
+              <td>${item.nilaiakhir}</td>
+            </tr>
+          `;
+            });
+
+            $("#hasil tbody").html(isi);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

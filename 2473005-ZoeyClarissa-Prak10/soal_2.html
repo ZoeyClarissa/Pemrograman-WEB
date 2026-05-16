@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Portal SI</title>
+
+    <script type="text/javascript" src="jquery-4.0.0.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      .box {
+        width: 400px;
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      input {
+        width: 95%;
+        margin-bottom: 5px;
+      }
+
+      #hasil {
+        width: 700px;
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .item {
+        margin-bottom: 30px;
+      }
+
+      .footer {
+        border-top: 1px solid gray;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <table border="1" width="100%">
+        <tr>
+          <td>Title</td>
+        </tr>
+
+        <tr>
+          <td>Content</td>
+        </tr>
+
+        <tr>
+          <td>Generator</td>
+        </tr>
+      </table>
+
+      <br />
+
+      <button id="look">Look</button>
+    </div>
+
+    <div id="hasil"></div>
+
+    <script>
+      $(document).ready(function () {
+        $("#look").click(function () {
+          $.getJSON("SIJson.txt", function (data) {
+            let isi = `
+              <h1>
+                <a href="${data.link}">
+                  ${data.title}
+                </a>
+              </h1>
+            `;
+
+            $.each(data.items, function (i, item) {
+              isi += `
+                <div class="item">
+
+                  <a href="${item.link}">
+                    ${item.title}
+                  </a>
+
+                  <br />
+
+                  By : ${item.author}
+                  /
+                  <i>${item.published}</i>
+
+                  <p>
+                    ${item.description}
+                  </p>
+
+                  Universitas :
+                  <a href="${item.universitas.m}">
+                    Click Here
+                  </a>
+
+                  <br /><br />
+
+                  Tag(s) :
+                  ${item.tags}
+
+                </div>
+              `;
+            });
+
+            isi += `
+              <div class="footer">
+                © ${data.generator}
+              </div>
+            `;
+
+            $("#hasil").html(isi);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
